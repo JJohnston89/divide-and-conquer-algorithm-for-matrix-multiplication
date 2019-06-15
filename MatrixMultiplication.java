@@ -70,7 +70,7 @@ public class MatrixMultiplication {
 	 */
 	private static List<int[][]> partition(int[][] a, int size){		
 		
-	    //The top left row and column both start at 0 and ends at mid of the input a.		 
+	        //The top left row and column both start at 0 and ends at mid of the input a.		 
 		int[][] top_left = new int[size][size];
 		
 		for(int i = 0; i < size; i++){
