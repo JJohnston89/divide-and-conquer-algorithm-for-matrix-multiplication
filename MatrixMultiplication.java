@@ -47,7 +47,7 @@ public class MatrixMultiplication {
 			List<int[][]> listA = partition(a, size);  //Creating A11, A12, A21, A22
 			List<int[][]> listB = partition(b, size);  //Creating B11, B12, B21, B22
 			
-		    int[][] c11 = add(matrixMult(listA.get(0), listB.get(0)), matrixMult(listA.get(1), listB.get(2)));
+		        int[][] c11 = add(matrixMult(listA.get(0), listB.get(0)), matrixMult(listA.get(1), listB.get(2)));
 			int[][] c12 = add(matrixMult(listA.get(0), listB.get(1)), matrixMult(listA.get(1), listB.get(3)));
 			int[][] c21 = add(matrixMult(listA.get(2), listB.get(0)), matrixMult(listA.get(3), listB.get(2)));
 			int[][] c22 = add(matrixMult(listA.get(2), listB.get(1)), matrixMult(listA.get(3), listB.get(3)));
@@ -163,6 +163,7 @@ public class MatrixMultiplication {
 		//Top right(c12) rows start at 0 and ends at mid. The columns start at mid and ends at c.length.
 		for(int i = 0; i < size; i++){
 			for(int j = size; j < size * 2; j++){
+				
 				c[i][j] = c12[i][j - size];
 			}
 		}
@@ -178,6 +179,7 @@ public class MatrixMultiplication {
 		//Bottom right(c22) rows and columns both start at mid and end at c.length.
 		for(int i = size; i < size * 2; i++){
 			for(int j = size; j < size * 2; j++){
+				
 				c[i][j] = c22[i - size][j - size];
 			}
 		}
@@ -196,8 +198,8 @@ public class MatrixMultiplication {
 		int[][] temp = new int[size][size];
 		
 		int max = 500; 
-        int min = -500; 
-        int range = max - min + 1; 
+                int min = -500; 
+                int range = max - min + 1; 
 		
 		for(int i = 0; i < size; i++){
 			for(int j = 0; j < size; j++){
